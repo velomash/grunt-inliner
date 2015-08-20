@@ -40,7 +40,5 @@
   "keywords": [
     "gruntplugin"
   ],
-  "dependencies": {
-    "path": "^0.11.14"
-  }
+  "dependencies": {}
 }

@@ -37,13 +37,13 @@ module.exports = function(grunt) {
         var injectElementRegex = /<inject\s*src=(['"])(.*)\1\s*>/gi,
           fileText = grunt.file.read(filepath);
         return fileText.replace(injectElementRegex, function(match, quoteType, svgPath, offset, original) {
-          var svgAddress = path.join(__dirname, options.basePath, svgPath);
+          var svgAddress = path.join(options.basePath, svgPath);
           if (grunt.file.exists(svgAddress)) {
             var fileText = grunt.file.read(svgAddress);
             count++;
             return fileText;
           } else {
-            grunt.log.warn('Source file "' + svgPath + '" not found.');
+            grunt.log.warn('Source file "' + svgAddress + '" not found.');
             return original;
           }
         });
